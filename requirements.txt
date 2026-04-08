@@ -1,0 +1,8 @@
+REQUIREMENTS.TXT CONTENT
+
+
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
