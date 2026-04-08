@@ -1,0 +1,111 @@
+📊 Food Nutrition Density Prediction
+📌 Overview
+
+This project focuses on predicting the Nutrition Density of food items using machine learning techniques. By analyzing various nutritional components such as macronutrients, vitamins, and minerals, the model generates a single composite score representing the overall nutritional value of a food item.
+
+In modern dietary analysis, interpreting multiple nutrients individually can be complex and inefficient. This project simplifies that process by building a predictive system that provides a holistic nutrition score using machine learning.
+
+🎯 Problem Statement
+
+Evaluating the nutritional value of food based on multiple nutrients is:
+
+Time-consuming
+Difficult to interpret holistically
+Prone to human error
+
+There is a need for a single, data-driven metric that summarizes the nutritional quality of food items.
+
+🚀 Objectives
+Combine multiple CSV datasets into a unified dataset
+Clean and preprocess nutritional data
+Perform feature engineering and transformation
+Train multiple machine learning models
+Compare model performance using standard metrics
+Predict a composite Nutrition Density score
+📂 Dataset Description
+
+The dataset consists of three CSV files:
+
+FOOD-DATA-GROUP1.csv
+FOOD-DATA-GROUP2.csv
+FOOD-DATA-GROUP3.csv
+Features include:
+Caloric Value
+Fat, Protein
+Vitamins (A, B1, B2, B3, B6, B12, C, D, E, K)
+Minerals (Calcium, Iron, Magnesium, Zinc, etc.)
+Food name (categorical)
+Target Variable:
+Nutrition Density
+🧹 Data Preprocessing
+Steps performed:
+Merged all datasets into one dataframe
+Removed unnecessary columns (Unnamed columns)
+Handled missing values:
+Numerical → mean imputation
+Categorical → most frequent value
+Applied One-Hot Encoding to categorical data (food)
+Scaled numerical features using StandardScaler
+⚙️ Methodology
+1. Feature Engineering
+
+Used ColumnTransformer to process:
+
+Numerical features → scaling + imputation
+Categorical features → encoding
+2. Train-Test Split
+80% Training
+20% Testing
+random_state = 42
+3. Models Used
+🔹 Linear Regression
+Simple and interpretable
+Performs well when relationships are linear
+🔹 Random Forest Regressor
+Ensemble model
+Captures non-linear relationships
+🔹 Support Vector Regressor (SVR)
+Works well in high-dimensional space
+Requires tuning for best performance
+📈 Evaluation Metrics
+
+Models were evaluated using:
+
+R² Score → goodness of fit
+MSE (Mean Squared Error)
+MAE (Mean Absolute Error)
+RMSE (Root Mean Squared Error)
+📊 Results
+Model	R² Score	MSE	MAE
+Linear Regression	0.99999	0.3477	0.2797
+Random Forest Regressor	0.9086	3706	17.05
+SVR	0.1798	33271	74.64
+🔍 Key Insights
+Linear Regression performed best → indicates strong linear relationships in data
+Nutrients like:
+Protein
+Calcium
+Potassium
+Phosphorus
+show strong positive correlation with nutrition density
+Random Forest captured non-linear patterns but was less accurate
+SVR underperformed due to lack of tuning
+✅ Conclusion
+The project successfully predicts Nutrition Density using ML models
+Linear Regression is the best model for this dataset
+Nutritional features strongly influence overall food quality
+🔮 Future Improvements
+Hyperparameter tuning (GridSearchCV)
+Advanced feature engineering (nutrient ratios, interactions)
+Larger and more diverse datasets
+Model explainability using SHAP/LIME
+Deploy as a web app (Streamlit / Flask)
+Add real-time food prediction interface
+🛠️ Tech Stack
+Python
+Pandas, NumPy
+Scikit-learn
+Google Colab
+👨‍💻 Author
+
+Vaibhav Jain
